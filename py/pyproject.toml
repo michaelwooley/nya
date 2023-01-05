@@ -24,6 +24,11 @@ mkdocs = "^1.4.2"
 mkdocs-material = "^8.5.10"
 mkdocstrings = { extras = ["python"], version = "^0.19.0" }
 
+[tool.poetry.group.experiments.dependencies]
+# For fiddling around in local dev env.
+jupyterlab = "^3.5.2"
+ipython = "^8.8.0"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

@@ -1,9 +1,19 @@
 .PHONY: install
 install: ## Install the poetry environment and install the pre-commit hooks
 	@echo "🚀 Creating virtual environment using pyenv and poetry"
-	@poetry install	
-	@ poetry run pre-commit install
+	@poetry install --without=experiments ## NOTE may need to exclude groups here.
+	@poetry run pre-commit install
 	@poetry shell
+
+.PHONY: install-dev
+install-dev: install ## Developer-specific installation
+	@echo "🧪 Installing dev ("experiments") deps"
+	@poetry install --without=experiments
+	@echo "📁 Creating data dirs at data/"
+	@mkdir -p data/raw
+	@mkdir -p data/int
+	@mkdir -p data/fin
+	@echo "🏁 Dev installed"
 
 .PHONY: check
 check: ## Run code quality tools.
@@ -43,3 +53,7 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 .DEFAULT_GOAL := help
+
+.PHONY: lab
+lab: ## Launch jupyter lab
+	@poetry run jupyter lab --no-browser --autoreload
