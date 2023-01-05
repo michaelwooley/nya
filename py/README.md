@@ -2,7 +2,7 @@
 
 [![Release](https://img.shields.io/github/v/release/michaelwooley/nya)](https://img.shields.io/github/v/release/michaelwooley/nya)
 [![Build status](https://img.shields.io/github/actions/workflow/status/michaelwooley/nya/main.yml?branch=main)](https://github.com/michaelwooley/nya/actions/workflows/main.yml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/michaelwooley/nya/branch/main/graph/badge.svg)](https://codecov.io/gh/michaelwooley/nya)
+<!--[![codecov](https://codecov.io/gh/michaelwooley/nya/branch/main/graph/badge.svg)](https://codecov.io/gh/michaelwooley/nya) -->
 [![Commit activity](https://img.shields.io/github/commit-activity/m/michaelwooley/nya)](https://img.shields.io/github/commit-activity/m/michaelwooley/nya)
 [![License](https://img.shields.io/github/license/michaelwooley/nya)](https://img.shields.io/github/license/michaelwooley/nya)
 
@@ -23,7 +23,7 @@ git remote add origin git@github.com:michaelwooley/nya.git
 git push -u origin main
 ```
 
-Finally, install the environment and the pre-commit hooks with 
+Finally, install the environment and the pre-commit hooks with
 
 ```bash
 make install
