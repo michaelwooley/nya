@@ -1,4 +1,5 @@
-# TODO Restore validate-codecov-config
+# TODO #1 Reinstate codecov. See commit: [`6e84bc7bbf23133e1eb620c7399f57335eef7b16`](https://github.com/michaelwooley/nya/commit/6e84bc7bbf23133e1eb620c7399f57335eef7b16)
+
 name: validate-codecov-config
 
 on:
