@@ -11,7 +11,13 @@ No, you're awesome. Python side.
 - **Github repository**: <https://github.com/michaelwooley/nya/>
 - **Documentation** <https://michaelwooley.github.io/nya/>
 
-## Getting started with your project
+# Development
+
+## Items
+
+TODO #1 Reinstate codecov. See commit: [`6e84bc7bbf23133e1eb620c7399f57335eef7b16`](https://github.com/michaelwooley/nya/commit/6e84bc7bbf23133e1eb620c7399f57335eef7b16)
+
+## [ignore] Getting started with your project
 
 First, create a repository on GitHub with the same name as this project, and then run the following commands:
 
