@@ -1,3 +1,7 @@
+# REFERENCE https://github.com/pawamoy/copier-pdm/blob/master/mkdocs.yml
+# REFERENCE https://squidfunk.github.io/mkdocs-material/
+# REFERENCE https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml
+
 site_name: nya
 repo_url: https://github.com/michaelwooley/nya
 site_url: https://michaelwooley.github.io/nya
@@ -5,11 +9,16 @@ site_description: No, you're awesome. Python side.
 site_author: Michael Wooley
 edit_uri: edit/main/docs/
 repo_name: michaelwooley/nya
-copyright: Maintained by <a href="https://michaelwooley.com">Florian</a>.
+copyright: Maintained by <a href="https://github.com/michaelwooley">Michael Wooley</a>.
 
 nav:
   - Home: index.md
   - Modules: modules.md
+  - Development:
+    - dev/index.md
+    - Contributing: dev/contributing.md
+    - Dev setup: dev/setup.md
+    - Boilerplate: dev/boilerplate.md
 plugins:
   - search
   - mkdocstrings:
@@ -22,6 +31,8 @@ theme:
   name: material
   feature:
     tabs: true
+  features:
+    - navigation.tabs
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -44,10 +55,16 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/michaelwooley/nya
-    - icon: fontawesome/brands/python
-      link: https://pypi.com/project/nya
 
 markdown_extensions:
+  - admonition
+  - pymdownx.emoji
+  - pymdownx.magiclink
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
   - toc:
       permalink: true
   - pymdownx.arithmatex:

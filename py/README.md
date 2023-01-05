@@ -11,6 +11,19 @@ No, you're awesome. (Python side.)
 - 💾 **Github repository**: <https://github.com/michaelwooley/nya/>
 - 📖 **Documentation** <https://michaelwooley.github.io/nya/>
 
+# Motivation
+
+## 🥅 Goals
+
+- _ETL._ Ingest github/awesome data to DB.
+- _Explore data._ Python best for data exploration.
+- _Docs._ I like mkdocs.
+- _Better boilerplate._ Improve underlying boilerplate (i.e. mkdocs, parameterization).
+
+## ❌ Non-goals
+
+- _Server-side._ Not setting up a python app.
+
 # Development
 
 ## Setup
