@@ -23,3 +23,5 @@ Some ideas.
 ## Features
 
 - [ ] ❓ Optional "Experiments" group (jupyter, ipython) meant only for local dev. (See [#6](https://github.com/michaelwooley/nya/issues/6))
+  - [ ] data+notebook dir setup?
+- [ ] ...
