@@ -1,9 +1,19 @@
 .PHONY: install
 install: ## Install the poetry environment and install the pre-commit hooks
 	@echo "🚀 Creating virtual environment using pyenv and poetry"
-	@poetry install ## NOTE may need to exclude groups here.
+	@poetry install --without=experiments ## NOTE may need to exclude groups here.
 	@poetry run pre-commit install
 	@poetry shell
+
+.PHONY: install-dev
+install-dev: install ## Developer-specific installation
+	@echo "🧪 Installing dev ("experiments") deps"
+	@poetry install --without=experiments
+	@echo "📁 Creating data dirs at data/"
+	@mkdir -p data/raw
+	@mkdir -p data/int
+	@mkdir -p data/fin
+	@echo "🏁 Dev installed"
 
 .PHONY: check
 check: ## Run code quality tools.

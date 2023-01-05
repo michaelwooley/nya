@@ -42,8 +42,8 @@ git clone git@github.com:michaelwooley/nya.git
 # Go to python part
 cd nya/py
 
-# install
-make install
+# install for local development (Wraps `make install`)
+make install-dev
 
 # View all make commands
 make
