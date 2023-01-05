@@ -26,10 +26,13 @@ No, you're awesome. (Python side.)
 
 # Development
 
+See the [development docs](./docs/dev).
+
 ## Setup
 
 Pre-reqs:
 
+- `git`
 - `make`
 - `pyenv`
 - `python>=3.10`
@@ -48,7 +51,6 @@ make install-dev
 # View all make commands
 make
 ```
-
 
 ## [ignore] Getting started with your project
 
