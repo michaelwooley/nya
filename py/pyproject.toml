@@ -10,6 +10,10 @@ packages = [{ include = "nya" }]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
+pydantic = {version = "^1.10.4", extras = ["email", "dotenv"]}
+requests = "^2.28.1"
+requests-cache = "^0.9.7"
+pygithub = "^1.57"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"
@@ -28,6 +32,8 @@ mkdocstrings = { extras = ["python"], version = "^0.19.0" }
 # For fiddling around in local dev env.
 jupyterlab = "^3.5.2"
 ipython = "^8.8.0"
+python-dotenv = "^0.21.0"
+rich = "^13.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

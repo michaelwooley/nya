@@ -10,6 +10,7 @@ site_author: Michael Wooley
 edit_uri: edit/main/docs/
 repo_name: michaelwooley/nya
 copyright: Maintained by <a href="https://github.com/michaelwooley">Michael Wooley</a>.
+use_directory_urls: false
 
 nav:
   - Home: index.md
@@ -17,7 +18,7 @@ nav:
   - Development:
     - dev/index.md
     - Contributing: dev/contributing.md
-    - Dev setup: dev/setup.md
+    - Dev setup: dev/dev-setup.md
     - Boilerplate: dev/boilerplate.md
 plugins:
   - search
@@ -69,3 +70,4 @@ markdown_extensions:
       permalink: true
   - pymdownx.arithmatex:
       generic: true
+  - md_in_html

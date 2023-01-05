@@ -26,10 +26,16 @@ No, you're awesome. (Python side.)
 
 # Development
 
+See the [development docs](./docs/dev).
+
+
+TODO #10 Python parts as monorepo with [namespaced package](https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#using-find-namespace-or-find-namespace-packages)?
+
 ## Setup
 
 Pre-reqs:
 
+- `git`
 - `make`
 - `pyenv`
 - `python>=3.10`
@@ -48,7 +54,6 @@ make install-dev
 # View all make commands
 make
 ```
-
 
 ## [ignore] Getting started with your project
 

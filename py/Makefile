@@ -13,6 +13,7 @@ install-dev: install ## Developer-specific installation
 	@mkdir -p data/raw
 	@mkdir -p data/int
 	@mkdir -p data/fin
+	@[ -f .env ] && echo "🔒🌲  .env files already exists." || (touch .env && echo "🔒🌲 Created .env file. See docs on populating it.")
 	@echo "🏁 Dev installed"
 
 .PHONY: check
