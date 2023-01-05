@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-
+# TODO #8 Fix or remove dockerfile
 FROM python:3.9-slim-buster
 
 ENV POETRY_VERSION=1.1.13 \
