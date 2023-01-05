@@ -6,16 +6,36 @@
 [![Commit activity](https://img.shields.io/github/commit-activity/m/michaelwooley/nya)](https://img.shields.io/github/commit-activity/m/michaelwooley/nya)
 [![License](https://img.shields.io/github/license/michaelwooley/nya)](https://img.shields.io/github/license/michaelwooley/nya)
 
-No, you're awesome. Python side.
+No, you're awesome. (Python side.)
 
-- **Github repository**: <https://github.com/michaelwooley/nya/>
-- **Documentation** <https://michaelwooley.github.io/nya/>
+- 💾 **Github repository**: <https://github.com/michaelwooley/nya/>
+- 📖 **Documentation** <https://michaelwooley.github.io/nya/>
 
 # Development
 
-## Items
+## Setup
 
-TODO #1 Reinstate codecov. See commit: [`6e84bc7bbf23133e1eb620c7399f57335eef7b16`](https://github.com/michaelwooley/nya/commit/6e84bc7bbf23133e1eb620c7399f57335eef7b16)
+Pre-reqs:
+
+- `make`
+- `pyenv`
+- `python>=3.10`
+- `poetry>=1.3.0`
+
+```bash
+# Clone repo
+git clone git@github.com:michaelwooley/nya.git
+
+# Go to python part
+cd nya/py
+
+# install
+make install
+
+# View all make commands
+make
+```
+
 
 ## [ignore] Getting started with your project
 
@@ -47,8 +67,9 @@ To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookie
 
 ## Releasing a new version
 
+TODO #2 Python release process.
 
 
 ---
 
-Repository initiated with [fpgmaas/cookiecutter-poetry](https://github.com/fpgmaas/cookiecutter-poetry).
+Repository initiated with [`fpgmaas/cookiecutter-poetry`](https://github.com/fpgmaas/cookiecutter-poetry) ([docs](https://fpgmaas.github.io/cookiecutter-poetry)).
