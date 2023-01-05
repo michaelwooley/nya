@@ -20,3 +20,6 @@ Some ideas.
 - [ ] Fix API parsing.
 - [ ] Add dedicated docs branch (e.g. `gh_pages`) that can support versioning.
 
+## Features
+
+- [ ] ❓ Optional "Experiments" group (jupyter, ipython) meant only for local dev. (See [#6](https://github.com/michaelwooley/nya/issues/6))
