@@ -83,6 +83,10 @@ To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookie
 TODO #2 Python release process.
 
 
+## Boilerplate
+
+Trying to fix/enhance boilerplate. See docs for more info.
+
 ---
 
 Repository initiated with [`fpgmaas/cookiecutter-poetry`](https://github.com/fpgmaas/cookiecutter-poetry) ([docs](https://fpgmaas.github.io/cookiecutter-poetry)).
