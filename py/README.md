@@ -28,6 +28,9 @@ No, you're awesome. (Python side.)
 
 See the [development docs](./docs/dev).
 
+
+TODO #10 Python parts as monorepo with [namespaced package](https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#using-find-namespace-or-find-namespace-packages)?
+
 ## Setup
 
 Pre-reqs:
