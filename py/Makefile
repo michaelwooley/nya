@@ -25,7 +25,7 @@ check: ## Run code quality tools.
 	@echo "🚀 Static type checking: Running mypy"
 	@poetry run mypy
 	@echo "🚀 Checking for obsolete dependencies: Running deptry"
-	@poetry run deptry .
+	@poetry run deptry . --ignore-notebooks --extend-exclude .venv  --extend-exclude .tox
 
 .PHONY: test
 test: ## Test the code with pytest
