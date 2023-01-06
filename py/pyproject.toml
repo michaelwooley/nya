@@ -10,7 +10,7 @@ packages = [{ include = "nya" }]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
-pydantic = {version = "^1.10.4", extras = ["email", "dotenv"]}
+pydantic = { version = "^1.10.4", extras = ["email", "dotenv"] }
 requests = "^2.28.1"
 requests-cache = "^0.9.7"
 pygithub = "^1.57"
@@ -22,13 +22,14 @@ deptry = "^0.6.4"
 mypy = "^0.981"
 pre-commit = "^2.20.0"
 tox = "^3.25.1"
+black = "^22.12.0"
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.4.2"
 mkdocs-material = "^8.5.10"
 mkdocstrings = { extras = ["python"], version = "^0.19.0" }
 
-[tool.poetry.group.experiments.dependencies]
+[tool.poetry.group.lab.dependencies]
 # For fiddling around in local dev env.
 jupyterlab = "^3.5.2"
 ipython = "^8.8.0"
@@ -40,7 +41,6 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
-line-length = 120
 target-version = ['py310']
 preview = true
 

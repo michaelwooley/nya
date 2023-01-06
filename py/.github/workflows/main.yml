@@ -27,7 +27,7 @@ jobs:
         run: poetry run pre-commit run -a --show-diff-on-failure
 
       - name: Inspect dependencies
-        run: poetry run deptry .
+        run: poetry run deptry . --ignore-notebooks --extend-exclude .venv  --extend-exclude .tox
 
       - name: Check Poetry lock file consistency
         run: poetry lock --check

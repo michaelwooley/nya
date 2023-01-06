@@ -2,5 +2,8 @@
   "python.testing.pytestArgs": ["tests"],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
-  "githubIssues.issueBranchTitle": "${user}/${sanitizedIssueTitle}/${issueNumber}"
+  "githubIssues.issueBranchTitle": "${user}/${sanitizedIssueTitle}/${issueNumber}",
+  "editor.formatOnSave": true,
+  "python.formatting.provider": "black",
+  "python.languageServer": "Pylance"
 }
