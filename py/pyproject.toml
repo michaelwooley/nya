@@ -35,6 +35,7 @@ jupyterlab = "^3.5.2"
 ipython = "^8.8.0"
 python-dotenv = "^0.21.0"
 rich = "^13.0.0"
+jupyterlab-code-formatter = "^1.5.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
