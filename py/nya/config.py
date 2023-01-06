@@ -15,9 +15,13 @@ class Settings(BaseSettings):
     root_dir: Path = Field(default=ROOT_DIR, description="Top-level of python pkg")
 
     github_token: SecretStr = Field(
-        ...,
+        default=...,
         env="GITHUB_PERSONAL_ACCESS_TOKEN",
         description="GitHub personal access token for GH api.",
+    )
+
+    github_cache_path: Path = Field(
+        default=ROOT_DIR.joinpath("data", "raw", "github_cache.db")
     )
 
     class Config:
