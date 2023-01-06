@@ -10,7 +10,7 @@ packages = [{ include = "nya" }]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
-pydantic = {version = "^1.10.4", extras = ["email", "dotenv"]}
+pydantic = { version = "^1.10.4", extras = ["email", "dotenv"] }
 requests = "^2.28.1"
 requests-cache = "^0.9.7"
 pygithub = "^1.57"
@@ -41,7 +41,6 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
-line-length = 120
 target-version = ['py310']
 preview = true
 
