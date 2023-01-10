@@ -19,6 +19,10 @@ class Settings(BaseSettings):
         env="GITHUB_PERSONAL_ACCESS_TOKEN",
         description="GitHub personal access token for GH api.",
     )
+    github_cache_path: Path = Field(
+        default=ROOT_DIR.joinpath("data/raw/github_api_cache.db"),
+        description="Path to github api cache.",
+    )
 
     class Config:
         env_file = DOTENV_PATH
