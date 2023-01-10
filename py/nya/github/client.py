@@ -4,7 +4,8 @@ from pathlib import Path
 
 import requests
 import requests_cache
-import tenacity
+
+# import tenacity
 from pydantic import BaseModel, SecretStr
 
 
@@ -67,10 +68,10 @@ class GithubSession:
         session.headers["Authorization"] = f"Bearer {token.get_secret_value()}"
         return session
 
-    @tenacity.retry(
-        wait=tenacity.wait.wait_exponential(multiplier=1, min=0, max=10),
-        retry=tenacity.retry.retry_if_exception(requests.HTTPError),
-    )
+    # @tenacity.retry(
+    #     wait=tenacity.wait.wait_exponential(multiplier=1, min=0, max=10),
+    #     retry=tenacity.retry_if_exception(requests.HTTPError),
+    # )
     @staticmethod
     def _init_rate_limit(session: requests.Session) -> GithubRateLimitCollection:
         url = "https://api.github.com/rate_limit"
@@ -86,13 +87,23 @@ class GithubSession:
         setattr(self._rl, nrl.resource, nrl)
         return None
 
+    def _get_simple(self, url: str) -> requests.Response:
+        res = self.session.get(url)
+        self._update_rate_limit(res)
+        res.raise_for_status()
+        return res
+
     @property
     def rate_limit(self) -> GithubRateLimit:
         return self._rl.core
 
     def get_repo(self, owner: str, repo: str) -> requests.Response:
         url = f"https://api.github.com/repos/{owner}/{repo}"
-        res = self.session.get(url)
-        self._update_rate_limit(res)
-        res.raise_for_status()
-        return res
+        # res = self.session.get(url)
+        # self._update_rate_limit(res)
+        # res.raise_for_status()
+        return self._get_simple(url)
+
+    def get_readme(self, owner: str, repo: str) -> requests.Response:
+        url = f"https://api.github.com/repos/{owner}/{repo}/readme"
+        return self._get_simple(url)
