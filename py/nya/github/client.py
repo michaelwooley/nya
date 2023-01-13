@@ -7,6 +7,7 @@ import requests_cache
 
 # import tenacity
 from pydantic import BaseModel, SecretStr
+from requests_cache.models.response import CachedResponse
 
 
 class GithubRateLimit(BaseModel):
@@ -87,23 +88,29 @@ class GithubSession:
         setattr(self._rl, nrl.resource, nrl)
         return None
 
-    def _get_simple(self, url: str) -> requests.Response:
+    def _get_simple(self, url: str) -> CachedResponse:
         res = self.session.get(url)
         self._update_rate_limit(res)
-        res.raise_for_status()
+        # res.raise_for_status()
+        if not isinstance(res, CachedResponse):
+            res = CachedResponse.from_response(res)
         return res
 
     @property
     def rate_limit(self) -> GithubRateLimit:
         return self._rl.core
 
-    def get_repo(self, owner: str, repo: str) -> requests.Response:
+    def get_repo(self, owner: str, repo: str) -> CachedResponse:
+        """Get repo
+
+        TODO If owner+repo well-formed, handle 404s as an indication that the repo or user is disabled/deleted.
+        """
         url = f"https://api.github.com/repos/{owner}/{repo}"
         # res = self.session.get(url)
         # self._update_rate_limit(res)
         # res.raise_for_status()
         return self._get_simple(url)
 
-    def get_readme(self, owner: str, repo: str) -> requests.Response:
+    def get_readme(self, owner: str, repo: str) -> CachedResponse:
         url = f"https://api.github.com/repos/{owner}/{repo}/readme"
         return self._get_simple(url)

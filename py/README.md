@@ -95,3 +95,12 @@ Trying to fix/enhance boilerplate. See docs for more info.
 ---
 
 Repository initiated with [`fpgmaas/cookiecutter-poetry`](https://github.com/fpgmaas/cookiecutter-poetry) ([docs](https://fpgmaas.github.io/cookiecutter-poetry)).
+
+packaging notes:
+
+- poetry:
+  - https://github.com/johnthagen/python-blueprint
+- hatch:
+  - https://github.com/ofek/hatch-showcase
+  - https://github.com/alvarobartt/python-package-template
+  - https://github.com/pypa/hatch
