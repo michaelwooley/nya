@@ -17,7 +17,8 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "husky": {
     "hooks": {
@@ -44,6 +45,12 @@
     }
   ],
   "devDependencies": {
+    "@graphql-codegen/cli": "2.16.4",
+    "@graphql-codegen/typescript": "2.8.7",
+    "@graphql-codegen/typescript-document-nodes": "2.3.12",
+    "@graphql-codegen/typescript-operations": "^2.5.12",
+    "@graphql-codegen/typescript-resolvers": "2.7.12",
+    "@octokit/graphql-schema": "^12.41.1",
     "@size-limit/preset-small-lib": "^8.1.1",
     "husky": "^8.0.3",
     "size-limit": "^8.1.1",
@@ -52,7 +59,9 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.4",
     "@octokit/graphql": "^5.0.4",
-    "@octokit/graphql-schema": "^12.41.1"
+    "cross-fetch": "^3.1.5",
+    "graphql": "^16.6.0"
   }
 }
