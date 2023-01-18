@@ -52,3 +52,6 @@ export const sum = (a: number, b: number) => {
   }
   return a + b;
 };
+// import { main } from './gql/index';
+// main();
+https://www.apollographql.com/docs/react/data/error-handling#graphql-error-policies

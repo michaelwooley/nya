@@ -6,20 +6,33 @@ import {
 } from '@apollo/client/core';
 import fetch from 'cross-fetch';
 
-export function githubClient(): ApolloClient<NormalizedCacheObject> {
-  if (!process.env.GITHUB_TOKEN) {
-    throw new Error(
-      'You need to provide a Github personal access token as `GITHUB_TOKEN` env variable. See README for more info.'
-    );
-  }
-
+/**
+ * Creates a new Apollo client for GraphQL requests to the GitHub API.
+ *
+ * @returns A new Apollo client for GitHub API requests.
+ *
+ * @throws An error if the `GITHUB_TOKEN` environment variable is not set.
+ *
+ * @see https://www.apollographql.com/docs/react/api/core/ApolloClient/
+ * @see https://www.apollographql.com/docs/react/api/link/apollo-link-http/
+ * @see https://www.apollographql.com/docs/react/data/cache/
+ */
+export function githubClient(
+  token: string,
+  fetcher?: (
+    input: RequestInfo | URL,
+    init?: RequestInit | undefined
+  ) => Promise<Response>
+): ApolloClient<NormalizedCacheObject> {
   return new ApolloClient({
+    // TODO Extract headers w/ rate limit info either from got hook or via link (https://stackoverflow.com/a/58986484/3422060)
     link: new HttpLink({
       uri: 'https://api.github.com/graphql',
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`,
+        authorization: `Bearer ${token}`,
       },
-      fetch,
+      // TODO Swap out for got: https://github.com/alexghr/got-fetch w/ https://github.com/sindresorhus/got/blob/main/documentation/cache.md
+      fetch: fetcher || fetch,
     }),
     cache: new InMemoryCache(),
   });
